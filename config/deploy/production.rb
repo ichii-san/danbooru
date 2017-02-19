@@ -1,6 +1,6 @@
-set :user, "albert"
+set :user, "serval"
 set :rails_env, "production"
-server "sonohara.donmai.us", :roles => %w(web app db), :primary => true, :user => "albert"
-server "hijiribe.donmai.us", :roles => %w(web app), :user => "albert"
+server "friendz.japari.me", :roles => %w(web app db), :primary => true, :user => "serval"
+server "friends.japari.me", :roles => %w(web app), :user => "serval"
 
 set :linked_files, fetch(:linked_files, []).push(".env.production")

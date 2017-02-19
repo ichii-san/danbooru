@@ -9,7 +9,7 @@ timeout 180
 listen "/tmp/.unicorn.sock", :backlog => 256
 
 # Spawn unicorn master worker for user apps (group: apps)
-user 'albert', 'albert'
+user 'serval', 'serval'
 
 # Fill path to your app
 working_directory app_path

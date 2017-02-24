@@ -544,8 +544,8 @@ class Post < ActiveRecord::Base
       decrement_tags = tag_array_was - tag_array
 
       decrement_tags_except_requests = decrement_tags.reject {|tag| tag == "tagme" || tag.end_with?("_request")}
-      if decrement_tags_except_requests.size > 0 && !CurrentUser.is_builder? && CurrentUser.created_at > 1.week.ago
-        self.errors.add(:updater_id, "must have an account at least 1 week old to remove tags")
+      if decrement_tags_except_requests.size > 0 && !CurrentUser.is_builder? && CurrentUser.created_at > 1.hour.ago
+        self.errors.add(:updater_id, "must have an account at least 1 hour old to remove tags")
         return false
       end
 
